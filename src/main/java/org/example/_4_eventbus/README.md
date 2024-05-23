@@ -22,4 +22,13 @@ EventBus
   - 继承 listener
   - 继承 event
 - 异常处理
+  - ExceptionEventBusExample
+  - 能通过重写SubscriberExceptionHandler 来自定义异常处理
 - DeadEvent
+  - DeadEventEventBusException 
+  - 处理未被订阅的消息，可以记录日志、发送警报或采取其他补救措施
+- unregister
+  - 移除注册的监听器
+- 使用 EventBus 连接两个服务
+  - ComEachOtherEventBusExample
+  - 类似本地的RPC通信
