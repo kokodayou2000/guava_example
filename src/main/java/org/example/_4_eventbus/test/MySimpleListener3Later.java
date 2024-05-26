@@ -1,24 +1,15 @@
-package org.example._4_eventbus.listener;
+package org.example._4_eventbus.test;
 
-import com.google.common.eventbus.Subscribe;
 
-public class SimpleListener {
+import org.example._4_eventbus.internal.MySubscriber;
 
-    /**
-     * 使用 subscribe 注解来让 post 触发
-     * @param event 事件
-     */
-    @Subscribe
-    public void doAction(final String event){
-        System.out.println("doAction "+ event );
-    }
+import java.util.Timer;
 
-    /**
-     * 使用 subscribe 注解来让 post 触发
-     * @param event 事件
-     */
-    @Subscribe
-    public void doAction1(final String event){
+public class MySimpleListener3Later {
+
+
+    @MySubscriber
+    public void test1(String text){
         try {
             System.out.println("延迟执行2s : "+ Thread.currentThread().getName());
             Thread.sleep(2000);
@@ -28,12 +19,8 @@ public class SimpleListener {
         }
     }
 
-    /**
-     * 使用 subscribe 注解来让 post 触发
-     * @param event 事件
-     */
-    @Subscribe
-    public void doAction2(final String event){
+    @MySubscriber
+    public void test2Later(String text){
         try {
             System.out.println("延迟执行5s : "+ Thread.currentThread().getName());
             Thread.sleep(5000);
@@ -43,4 +30,8 @@ public class SimpleListener {
         }
     }
 
+    @MySubscriber
+    public void test3(String text){
+        System.out.println("直接执行 : "+ Thread.currentThread().getName());
+    }
 }

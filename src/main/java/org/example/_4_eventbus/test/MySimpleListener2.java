@@ -16,6 +16,16 @@ public class MySimpleListener2 {
     }
 
     @MySubscriber
+    public void test3Later(String text){
+        try {
+            System.out.println("延迟执行");
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @MySubscriber
     public void test3(Integer text){
         System.out.println("default Integer test2 listener2: "+text);
     }

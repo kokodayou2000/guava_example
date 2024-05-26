@@ -1,14 +1,13 @@
 自定义 EventBus
 
 - 注册事件
-  - 事件注册表
+  - 事件注册表 Map<String,Queue<Subscribe>>
 - 注销事件
   - 事件注册表
 - 事件分发
   - 事件上下文
     - topic 名称
-    - bus 
-    - 注册表
+    - 总线名称
     - 事件
 - 异常处理
 

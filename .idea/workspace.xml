@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ed2150e-d39d-49d0-83cd-739cc01c5642" name="Changes" comment="feat: watchServer+eventBus来实现文件夹监控">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/Bus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MyDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MyEventBus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MyEventContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MyEventExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MyRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MySubscribe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MySubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MyEventBusExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MySimpleListener1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MySimpleListener2.java" afterDir="false" />
+    <list default="true" id="2ed2150e-d39d-49d0-83cd-739cc01c5642" name="Changes" comment="feat: 自定义EventBus,能监听自定义的 Subscriber...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/AsyncEventBusExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/MyAsyncEventBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MyAsyncEventBusExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MySimpleListener3Later.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/events/MonitorClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/events/MonitorClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/monitor/aa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/monitor/aa.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/internal/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/listener/SimpleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/listener/SimpleListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MySimpleListener2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/_4_eventbus/test/MySimpleListener2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AsyncEventBusExample.executor": "Run",
     "Application.ComEachOtherEventBusExample.executor": "Run",
     "Application.DeadEventEventBusExample.executor": "Run",
     "Application.ExceptionEventBusExample.executor": "Run",
@@ -77,6 +71,7 @@
     "Application.InheritListenerEventBusExample.executor": "Run",
     "Application.MonitorClient.executor": "Run",
     "Application.MultipleEventBusExample.executor": "Run",
+    "Application.MyAsyncEventBusExample.executor": "Run",
     "Application.MyEventBusExample.executor": "Run",
     "Application.SimpleEventBusExample.executor": "Run",
     "Maven.guava_example [clean].executor": "Run",
@@ -95,8 +90,9 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.MyEventBusExample.executor": "Run"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -105,27 +101,15 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example._4_eventbus.test" />
+      <recent name="org.example._4_eventbus.internal" />
       <recent name="org.example._4_eventbus" />
       <recent name="org.example._4_eventbus.service" />
       <recent name="org.example._4_eventbus.events" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MyEventBusExample">
-    <configuration name="ComEachOtherEventBusExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example._4_eventbus.ComEachOtherEventBusExample" />
-      <module name="guava_example" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example._4_eventbus.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeadEventEventBusExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example._4_eventbus.DeadEventEventBusExample" />
+  <component name="RunManager" selected="Application.AsyncEventBusExample">
+    <configuration name="AsyncEventBusExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example._4_eventbus.AsyncEventBusExample" />
       <module name="guava_example" />
       <extension name="coverage">
         <pattern>
@@ -163,6 +147,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyAsyncEventBusExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example._4_eventbus.test.MyAsyncEventBusExample" />
+      <module name="guava_example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example._4_eventbus.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyEventBusExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example._4_eventbus.test.MyEventBusExample" />
       <module name="guava_example" />
@@ -178,19 +175,16 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyEventBusExample" />
-        <item itemvalue="Application.MonitorClient" />
-        <item itemvalue="Application.ComEachOtherEventBusExample" />
-        <item itemvalue="Application.DeadEventEventBusExample" />
-        <item itemvalue="Application.ExceptionEventBusExample" />
+        <item itemvalue="Application.AsyncEventBusExample" />
+        <item itemvalue="Application.MyAsyncEventBusExample" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -213,7 +207,11 @@
       <workItem from="1716537610091" duration="2285000" />
       <workItem from="1716546240892" duration="4000" />
       <workItem from="1716546256901" duration="2007000" />
-      <workItem from="1716551159046" duration="8863000" />
+      <workItem from="1716551159046" duration="8970000" />
+      <workItem from="1716613704413" duration="596000" />
+      <workItem from="1716708747241" duration="305000" />
+      <workItem from="1716709801500" duration="1036000" />
+      <workItem from="1716712238545" duration="1305000" />
     </task>
     <task id="LOCAL-00001" summary="build: init">
       <option name="closed" value="true" />
@@ -247,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716464658868</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: 自定义EventBus,能监听自定义的 Subscriber...">
+      <option name="closed" value="true" />
+      <created>1716561412413</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716561412413</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +265,8 @@
     <MESSAGE value="build: deadEvent，用来兜底的" />
     <MESSAGE value="feat: 组合多个事件，使用一个eventBus来处理" />
     <MESSAGE value="feat: watchServer+eventBus来实现文件夹监控" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: watchServer+eventBus来实现文件夹监控" />
+    <MESSAGE value="feat: 自定义EventBus,能监听自定义的 Subscriber..." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 自定义EventBus,能监听自定义的 Subscriber..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
